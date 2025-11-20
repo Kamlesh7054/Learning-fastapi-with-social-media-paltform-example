@@ -9,5 +9,5 @@ class Post(Base):
     id = Column(Integer, primary_key=True, nullable=False)# primary key column
     title = Column(String, nullable=False)# title column
     content = Column(String, nullable=False)# content column
-    published = Column(Boolean, default=True)# published column
-    # created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
+    published = Column(Boolean, server_default='TRUE', nullable=False)# published column
+    created_at = Column(TIMESTAMP(timezone=True), nullable=False, server_default=text('now()'))
